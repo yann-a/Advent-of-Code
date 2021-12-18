@@ -2,7 +2,7 @@ from aoc import AOC
 
 aoc = AOC(22,  2020, __file__)
 
-input = aoc.get_example(0).strip().split('\n\n')
+#input = aoc.get_example(0).strip().split('\n\n')
 input = aoc.input.strip().split('\n\n')
 
 decks = (list(map(int, input[0].split('\n')[1:])), list(map(int, input[1].split('\n')[1:])))
