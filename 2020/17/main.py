@@ -2,7 +2,7 @@ from aoc import AOC
 
 aoc = AOC(17,  2020, __file__)
 
-input = aoc.get_example(0).strip().split('\n')
+#input = aoc.get_example(0).strip().split('\n')
 input = aoc.input.strip().split('\n')
 
 def neighbour(grid, x, y, z, w=None):

@@ -2,7 +2,7 @@ from aoc import AOC
 
 aoc = AOC(18,  2020, __file__)
 
-input = aoc.get_example(1).strip().split('\n')
+#input = aoc.get_example(1).strip().split('\n')
 input = """
 1 + 2 * 3 + 4 * 5 + 6
 1 + (2 * 3) + (4 * (5 + 6))

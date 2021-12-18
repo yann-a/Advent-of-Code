@@ -3,7 +3,7 @@ from functools import reduce
 
 aoc = AOC(16,  2020, __file__)
 
-input = aoc.get_example(2).strip().split('\n\n')
+#input = aoc.get_example(2).strip().split('\n\n')
 input = aoc.input.strip().split('\n\n')
 
 validity = {}
