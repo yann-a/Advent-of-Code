@@ -7,7 +7,7 @@ import secret
 AOC_COOKIE = secret.cookie # AOC session cookie
 
 class AOC:
-    def __init__(self, day, year=2021, path=None):
+    def __init__(self, day, year=2022, path=None):
         self.day = day
         self.year = year
         self.path = '/'.join(path.split('/') [:-1]) + '/' if path is not None else ''
@@ -25,6 +25,9 @@ class AOC:
         if self._input is None:
             req = requests.get(
                 f'https://adventofcode.com/{self.year}/day/{self.day}/input', headers={'cookie': 'session='+AOC_COOKIE})
+            if req.status_code != 200:
+                print(f'Fetching input resulted in error {req.status_code}')
+                return
             self._input = req.text
             open(self.path + 'input', 'w').write(self._input)
         return self._input
@@ -52,7 +55,8 @@ class AOC:
                                  headers={'cookie': 'session='+AOC_COOKIE}, data=data)
         if 'You gave an answer too recently' in response.text:
             # You will get this if you submitted a wrong answer less than 60s ago.
-            print('VERDICT : TOO MANY REQUESTS')
+            t = re.search('You have (.*) left to wait.', response.text)
+            print(f'VERDICT : TOO MANY REQUESTS. WAIT {t.group(1)}')
         elif 'not the right answer' in response.text:
             if 'too low' in response.text:
                 print('VERDICT : WRONG (TOO LOW)')
