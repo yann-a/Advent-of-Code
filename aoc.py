@@ -15,7 +15,7 @@ class AOC:
     def __init__(self, day, year=2022, path=None):
         self.day = day
         self.year = year
-        self.path = '/'.join(path.split('/') [:-1]) + '/' if path is not None else ''
+        self.path = '/'.join(path.split('/')[:-1]) + '/' if path is not None else ''
 
         try:
             self._input = open(self.path + 'input').read()
