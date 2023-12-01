@@ -12,7 +12,7 @@ headers = {
 }
 
 class AOC:
-    def __init__(self, day, year=2022, path=None):
+    def __init__(self, day, year=2023, path=None):
         self.day = day
         self.year = year
         self.path = '/'.join(path.split('/')[:-1]) + '/' if path is not None else ''
