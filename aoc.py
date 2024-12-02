@@ -82,5 +82,8 @@ class AOC:
                 print('VERDICT : WRONG (UNKNOWN)')
         elif 'seem to be solving the right level.' in response.text:
             print('VERDICT : ALREADY SOLVED')
-        else:
+        elif 'right answer' in response.text:
             print('VERDICT : OK !')
+        else:
+            print('VERDICT: UNKNOWN')
+            print(response.text)
