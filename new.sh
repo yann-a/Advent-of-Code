@@ -15,7 +15,7 @@ then
         cd $DAY
         sed -i -e "s/YEAR/$YEAR/g" main.py
         sed -i -e "s/DAY/$DAY_NOPAD/g" main.py
-        code . -g main.py:9:5
+        code .. -g main.py:9:5
         firefox https://adventofcode.com/$YEAR/day/$DAY_NOPAD
     fi
 else
